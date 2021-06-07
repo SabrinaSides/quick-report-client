@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import ReportContext from './ReportContext';
 import LandingPage from './LandingPage/LandingPage';
 import ReportList from './ReportList/ReportList';
 import AddReport from './AddReport/AddReport';
@@ -20,8 +21,12 @@ class App extends Component {
   }
 
   render() {
-    //add contextvalue to sync with state and state changes
+    const contextValue = {
+      reports: this.state.reports
+    }
+
     return (
+      <ReportContext.Provider value={contextValue}>
       <div className='App'>
         <Navbar />
         <h1 className='header'><Link to='/report-list'>QuickReport</Link></h1>
@@ -33,6 +38,7 @@ class App extends Component {
           <Route path='/report/:id' component={ReportPage} />
         </main>
       </div>
+      </ReportContext.Provider>
     );
   }
 }

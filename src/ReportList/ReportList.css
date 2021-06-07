@@ -1,0 +1,19 @@
+.folder-container {
+  border: solid;
+}
+
+.room-tab {
+  border: solid;
+  color: red;
+}
+
+.report-tabs {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0px;
+}
+
+h2 {
+  text-align: center;
+}

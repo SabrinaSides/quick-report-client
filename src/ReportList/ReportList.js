@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import ReportContext from '../ReportContext';
+import './ReportList.css';
 
-function ReportList() {
+class ReportList extends Component {
+  static contextType = ReportContext;
+
+  render() {
+    const { reports } = this.context;
+
     return (
-        <div>
-            List of reports
+      <div className='report-list'>
+        <h2> Report Collection </h2>
+        <ul className='report-tabs'>
+          {reports.map((report) => {
+            return <li key={report.id} className='room-tab'>{report.room_number}</li>;
+          })}
+        </ul>
+
+        <div className="folder-container">
+          <Link to ='/add-report'>+ Add New Report</Link>
+          <h3> Choose a tab to see the full patient report</h3>
         </div>
-    )
+      </div>
+    );
+  }
 }
 
-export default ReportList
+export default ReportList;
