@@ -1,0 +1,8 @@
+.features-block {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.feature {
+  border: solid;
+}

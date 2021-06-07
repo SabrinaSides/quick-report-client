@@ -1,5 +1,5 @@
 export default {
-  reports: [
+  'reports': [
     {
       id: 1,
       room_number: '5',
