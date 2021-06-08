@@ -34,8 +34,8 @@ class App extends Component {
           <Route exact path='/' component={LandingPage} />
           <Route path='/report-list' component={ReportList} />
           <Route path='/add-report' component={AddReport} />
-          <Route path='/edit-report/:id' component={EditReport} />
-          <Route path='/report/:id' component={ReportPage} />
+          <Route path='/edit-report/:pt_id' component={EditReport} />
+          <Route path='/report/:pt_id' component={ReportPage} />
         </main>
       </div>
       </ReportContext.Provider>

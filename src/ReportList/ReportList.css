@@ -5,6 +5,8 @@
 .room-tab {
   border: solid;
   color: red;
+  width: min-content;
+  margin-bottom: 0px;
 }
 
 .report-tabs {

@@ -14,7 +14,7 @@ class ReportList extends Component {
         <h2> Report Collection </h2>
         <ul className='report-tabs'>
           {reports.map((report) => {
-            return <li key={report.id} className='room-tab'>{report.room_number}</li>;
+            return <li key={report.pt_id} className='room-tab'><Link to={`/report/${report.pt_id}`}>{report.room_number}</Link></li>;
           })}
         </ul>
 

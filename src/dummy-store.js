@@ -1,7 +1,7 @@
 export default {
   'reports': [
     {
-      id: 1,
+      pt_id: 1,
       room_number: '5',
       pt_initials: 'PH',
       admit_date: '6/3/2021',
@@ -25,9 +25,10 @@ export default {
       skin: 'n/a',
       IV_access: 'RUE PICC',
       additional_report: 'abnormally high K level- 5.4',
+      user_id: 1
     },
     {
-      id: 2,
+      pt_id: 2,
       room_number: '0822',
       pt_initials: 'VN',
       admit_date: '6/2/2021',
@@ -51,9 +52,10 @@ export default {
       skin: 'stage 1 coccyx',
       IV_access: 'left FA PIV',
       additional_report: 'daughter staying with pt',
+      user_id: 1
     },
     {
-      id: 3,
+      pt_id: 3,
       room_number: '75510',
       pt_initials: 'BR',
       admit_date: '6/5/2021',
@@ -77,9 +79,10 @@ export default {
       skin: 'scattered bruising-abdomen',
       IV_access: 'right AC PIV',
       additional_report: 'wound needs dressing change',
+      user_id: 1
     },
     {
-      id: 4,
+      pt_id: 4,
       room_number: '52756',
       pt_initials: 'ID',
       admit_date: '6/1/2021',
@@ -103,6 +106,7 @@ export default {
       skin: 'n/a',
       IV_access: 'left FA PIV',
       additional_report: 'daughter staying with pt',
+      user_id: 1
     },
   ],
 };
