@@ -22,10 +22,10 @@ class ReportPage extends Component {
 
     return (
         <div className='full-report-container'>
-            <div className='full-report-tab'>
+            <div className='folder-report-tab'>
                 <p>Room {chosenReport.room_number}</p>
             </div>
-            <ul className='full-report'>
+            <ul className='folder-body'>
                 <h3>Patient Info:</h3>
             <li>Room Number: {chosenReport.room_number}</li>
             <li>Patient Initials: {chosenReport.pt_initials}</li>

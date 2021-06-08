@@ -9,6 +9,7 @@ import EditReport from './EditReport/EditReport';
 import Navbar from './Navbar/Navbar';
 import reportStore from './dummy-store'
 import './App.css';
+import reports from './dummy-store';
 
 class App extends Component {
   state = {
@@ -20,9 +21,17 @@ class App extends Component {
     setTimeout(() => this.setState(reportStore), 100)
   }
 
+  addReport = newReport => {
+    this.setState({
+      ...reports,
+      newReport
+    })
+  }
+
   render() {
     const contextValue = {
-      reports: this.state.reports
+      reports: this.state.reports,
+      addReport: this.addReport
     }
 
     return (

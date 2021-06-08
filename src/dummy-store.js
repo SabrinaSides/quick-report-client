@@ -1,8 +1,8 @@
-export default {
-  'reports': [
+const reports = {
+  reports: [
     {
       pt_id: 1,
-      room_number: '5',
+      room_number: '502',
       pt_initials: 'PH',
       admit_date: '6/3/2021',
       date_report_created: '6/2/2021',
@@ -29,7 +29,7 @@ export default {
     },
     {
       pt_id: 2,
-      room_number: '0822',
+      room_number: '822',
       pt_initials: 'VN',
       admit_date: '6/2/2021',
       date_report_created: '6/5/2021',
@@ -56,7 +56,7 @@ export default {
     },
     {
       pt_id: 3,
-      room_number: '75510',
+      room_number: '755',
       pt_initials: 'BR',
       admit_date: '6/5/2021',
       date_report_created: '6/1/2021',
@@ -83,7 +83,7 @@ export default {
     },
     {
       pt_id: 4,
-      room_number: '52756',
+      room_number: '527',
       pt_initials: 'ID',
       admit_date: '6/1/2021',
       date_report_created: '6/6/2021',
@@ -110,3 +110,5 @@ export default {
     },
   ],
 };
+
+export default reports;

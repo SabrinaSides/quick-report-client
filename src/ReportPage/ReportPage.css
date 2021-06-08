@@ -2,14 +2,14 @@
   border: solid;
 }
 
-.full-report {
+.folder-body {
   border: solid;
   color: green;
   margin-left: 2%;
   margin-right: 2%;
 }
 
-.full-report-tab {
+.folder-report-tab {
   border: solid;
   color: red;
   width: 15%;
