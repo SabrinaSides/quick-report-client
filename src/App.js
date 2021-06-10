@@ -13,25 +13,24 @@ import reports from './dummy-store';
 
 class App extends Component {
   state = {
-    reports: []
+    reports: [...reports]
   }
 
   componentDidMount() {
     //api call in future
-    setTimeout(() => this.setState(reportStore), 100)
+    //setTimeout(() => this.setState(reportStore), 100)
   }
 
-  addReport = newReport => {
+  handleAddReport = newReport => {
     this.setState({
-      ...reports,
-      newReport
+      reports: [...this.state.reports, newReport]
     })
   }
 
   render() {
     const contextValue = {
       reports: this.state.reports,
-      addReport: this.addReport
+      addReport: this.handleAddReport
     }
 
     return (

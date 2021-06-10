@@ -16,6 +16,10 @@ class AddReport extends Component {
 
   static contextType = ReportContext;
 
+  static defaultProps = {
+    addReport: () => {}
+  }
+
   handleChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -31,7 +35,7 @@ class AddReport extends Component {
       event.preventDefault();
       const { room_number, pt_initials, diagnosis, allergies } = this.state
       const newReport = { room_number, pt_initials, diagnosis, allergies }
-      this.context.addReport(newReport)
+    this.context.addReport(newReport)
   }
 
   render() {
@@ -41,13 +45,13 @@ class AddReport extends Component {
           <p>New Patient</p>
         </div>
         <div className="folder-body">
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label htmlFor="room_number">Room Number: (required)</label>
             <input
               type="text"
               name="room_number"
               id="room_number"
-              maxlength="8"
+              maxLength="8"
               value={this.state.room_number}
               onChange={this.handleChange}
               required
@@ -58,7 +62,7 @@ class AddReport extends Component {
               type="text"
               name="pt_initials"
               id="pt_initials"
-              maxlength="3"
+              maxLength="3"
               value={this.state.pt_initials}
               onChange={this.handleChange}
             />

@@ -1,5 +1,4 @@
-const reports = {
-  reports: [
+const reports = [
     {
       pt_id: 1,
       room_number: '502',
@@ -108,7 +107,6 @@ const reports = {
       additional_report: 'daughter staying with pt',
       user_id: 1
     },
-  ],
-};
+  ];
 
 export default reports;
