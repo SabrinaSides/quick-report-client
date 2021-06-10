@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
+import uuid from 'react-uuid';
 
 class AddReport extends Component {
   state = {
@@ -17,7 +18,10 @@ class AddReport extends Component {
   static contextType = ReportContext;
 
   static defaultProps = {
-    addReport: () => {}
+    addReport: () => {},
+    history: {
+      goBack: () => {}
+    }
   }
 
   handleChange = (event) => {
@@ -34,8 +38,10 @@ class AddReport extends Component {
   handleSubmit = event => {
       event.preventDefault();
       const { room_number, pt_initials, diagnosis, allergies } = this.state
-      const newReport = { room_number, pt_initials, diagnosis, allergies }
+      const pt_id = uuid()
+      const newReport = { pt_id, room_number, pt_initials, diagnosis, allergies }
     this.context.addReport(newReport)
+    this.props.history.goBack()
   }
 
   render() {

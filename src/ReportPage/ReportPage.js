@@ -5,22 +5,23 @@ import './ReportPage.css'
 class ReportPage extends Component {
     static contextType = ReportContext;
 
-    
-
     render(){
-        const { reports=[] } = this.context;
+        const { reports } = this.context;
         const { pt_id } = this.props.match.params
-        const ptId = parseInt(pt_id)
+        // const ptId = parseInt(pt_id)
 
-
-        const findReport = (reports=[], ptId) =>
-             reports.find(report => report.pt_id === ptId)
+        const findReport = (reports, pt_id) =>
+             reports.find(report => report.pt_id === pt_id)
+        
+        const handleThisDelete = () => {
+            this.context.deleteReport(chosenReport.pt_id)
+            this.props.history.push('/report-list')
+        }
         
 
-        const chosenReport = findReport(reports, ptId)
-        console.log(chosenReport)
+        const chosenReport = findReport(reports, pt_id)
 
-    return (
+    return chosenReport ? (
         <div className='full-report-container'>
             <div className='folder-report-tab'>
                 <p>Room {chosenReport.room_number}</p>
@@ -44,8 +45,10 @@ class ReportPage extends Component {
             <h3>Respiratory:</h3>
             <li></li>
     </ul>
+    <button onClick={() => console.log('edit')}>Edit</button>
+    <button onClick={() => handleThisDelete()}>Delete</button>
         </div>
-    )
+    ) : <div />
     }
 }
 

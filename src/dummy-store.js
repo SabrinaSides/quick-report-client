@@ -1,6 +1,8 @@
+import uuid from 'react-uuid'
+
 const reports = [
     {
-      pt_id: 1,
+      pt_id: uuid(),
       room_number: '502',
       pt_initials: 'PH',
       admit_date: '6/3/2021',
@@ -27,7 +29,7 @@ const reports = [
       user_id: 1
     },
     {
-      pt_id: 2,
+      pt_id: uuid(),
       room_number: '822',
       pt_initials: 'VN',
       admit_date: '6/2/2021',
@@ -54,7 +56,7 @@ const reports = [
       user_id: 1
     },
     {
-      pt_id: 3,
+      pt_id: uuid(),
       room_number: '755',
       pt_initials: 'BR',
       admit_date: '6/5/2021',
@@ -81,7 +83,7 @@ const reports = [
       user_id: 1
     },
     {
-      pt_id: 4,
+      pt_id: uuid(),
       room_number: '527',
       pt_initials: 'ID',
       admit_date: '6/1/2021',

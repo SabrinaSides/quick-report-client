@@ -16,6 +16,12 @@ class App extends Component {
     reports: [...reports]
   }
 
+  static defaultProps = {
+    history: {
+      push: () => {}
+    }
+  }
+
   componentDidMount() {
     //api call in future
     //setTimeout(() => this.setState(reportStore), 100)
@@ -27,10 +33,18 @@ class App extends Component {
     })
   }
 
+  handleDeleteReport = report_id => {
+    this.setState({
+      reports: reports.filter(report => report.pt_id !== report_id)
+    })
+    //console.log('Propshistory', this.props.history.goBack)
+  }
+
   render() {
     const contextValue = {
       reports: this.state.reports,
-      addReport: this.handleAddReport
+      addReport: this.handleAddReport,
+      deleteReport: this.handleDeleteReport
     }
 
     return (
