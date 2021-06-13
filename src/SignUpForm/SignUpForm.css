@@ -1,12 +1,11 @@
 .sign-up-container {
-  border: solid;
   display: flex;
   justify-content: space-around;
 }
 
 .sign-up-form {
   border: solid;
-  color: red;
+  color: navy;
   margin: 10%;
 }
 

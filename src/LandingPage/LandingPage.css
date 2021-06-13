@@ -1,8 +1,5 @@
 .features-block {
   display: flex;
-  flex-flow: column nowrap;
-}
-
-.feature {
-  border: solid;
+  flex-flow: column wrap;
+  text-align: center;
 }

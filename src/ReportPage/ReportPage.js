@@ -39,20 +39,36 @@ class ReportPage extends Component {
           <h3>Patient Info:</h3>
           <li>Room Number: {chosenReport.room_number}</li>
           <li>Patient Initials: {chosenReport.pt_initials}</li>
+          <li>Age: {chosenReport.age}</li>
+          <li>Gender: {chosenReport.gender}</li>
           <li>Diagnosis: {chosenReport.diagnosis}</li>
           <li>Allergies: {chosenReport.allergies}</li>
 
           <h3>Neuro:</h3>
           <li>Alert and Oriented: {chosenReport.A_O}</li>
           <li>Pupils: {chosenReport.pupils}</li>
+          <li>Other Neuro: {chosenReport.other_neuro}</li>
 
           <h3>Cardiac:</h3>
           <li>Rhythm: {chosenReport.heart_rhythm}</li>
           <li>Blood Pressure: {chosenReport.BP}</li>
           <li>Edema: {chosenReport.edema}</li>
+          <li>Other Cardiac: {chosenReport.other_cardiac}</li>
 
           <h3>Respiratory:</h3>
-          <li></li>
+          <li>Lung Sounds: {chosenReport.lung_sounds}</li>
+          <li>Oxygen Requirement: {chosenReport.oxygen}</li>
+          <li>Other Respiratory: {chosenReport.other_resp}</li>
+
+          <h3>GI/GU</h3>
+          <li>Last BM: {chosenReport.last_bm}</li>
+          <li>GU: {chosenReport.gu}</li>
+          <li>Other GI/GU: {chosenReport.other_gi_gu}</li>
+
+          <h3>Other</h3>
+          <li>Skin: {chosenReport.skin}</li>
+          <li>IV Access: {chosenReport.IV_access}</li>
+          <li>Additinal Report: {chosenReport.additional_report}</li>
         </ul>
        
       </div>
