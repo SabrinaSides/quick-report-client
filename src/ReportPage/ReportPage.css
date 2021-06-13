@@ -1,22 +1,44 @@
 .full-report-container {
   border: solid;
+  color: white;
 }
 
 .folder-body {
   border: solid;
-  color: green;
+  color: black;
+  background-color: rgb(240, 219, 193);
   margin-left: 2%;
   margin-right: 2%;
+  margin-top: 0%;
 }
 
 .folder-report-tab {
   border: solid;
-  color: red;
-  width: 15%;
-  height: 50px;
+  color: black;
+  background-color: rgb(206, 73, 73);
+  height: 40px;
   margin-bottom: 0px;
+  margin-top: 2%;
   margin-left: 2%;
   padding: 5px;
+  text-align: center;
+  max-width: 100px;
 }
 
+.report-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.tab-and-back-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.back-btn {
+  height: 8%;
+}
 /* room tab css in ReportList */

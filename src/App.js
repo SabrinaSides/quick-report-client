@@ -7,13 +7,12 @@ import AddReport from './AddReport/AddReport';
 import ReportPage from './ReportPage/ReportPage';
 import EditReport from './EditReport/EditReport';
 import Navbar from './Navbar/Navbar';
-import reportStore from './dummy-store'
 import './App.css';
 import reports from './dummy-store';
 
 class App extends Component {
   state = {
-    reports: [...reports]
+    reports: reports
   }
 
   static defaultProps = {
@@ -22,36 +21,40 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-    //api call in future
-    //setTimeout(() => this.setState(reportStore), 100)
-  }
-
   handleAddReport = newReport => {
     this.setState({
       reports: [...this.state.reports, newReport]
     })
   }
 
+  handleEditReport = editedReport => {
+    const indexOfReport = this.state.reports.findIndex( report => report.pt_id === editedReport.pt_id)
+    console.log('index of report', indexOfReport)
+
+    this.setState({
+        reports: [...this.state.reports.filter((_, i) => i !== indexOfReport), editedReport]
+      })
+  }
+
   handleDeleteReport = report_id => {
     this.setState({
       reports: reports.filter(report => report.pt_id !== report_id)
     })
-    //console.log('Propshistory', this.props.history.goBack)
   }
 
   render() {
     const contextValue = {
       reports: this.state.reports,
       addReport: this.handleAddReport,
-      deleteReport: this.handleDeleteReport
+      deleteReport: this.handleDeleteReport,
+      editReport: this.handleEditReport
     }
 
     return (
       <ReportContext.Provider value={contextValue}>
       <div className='App'>
         <Navbar />
-        <h1 className='header'><Link to='/report-list'>QuickReport</Link></h1>
+        <h1 className='header'><Link to='/report-list' className='text-link'>QuickReport</Link></h1>
         <main>
           <Route exact path='/' component={LandingPage} />
           <Route path='/report-list' component={ReportList} />

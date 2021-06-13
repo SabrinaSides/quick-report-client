@@ -1,21 +1,12 @@
-.folder-container {
-  border: solid;
-}
-
-.room-tab {
-  border: solid;
-  color: red;
-  width: min-content;
-  margin-bottom: 0px;
+h2 {
+  text-align: center;
 }
 
 .report-tabs {
-  list-style-type: none;
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 0px;
-}
-
-h2 {
+  margin-bottom: 0;
+  padding: 5px;
   text-align: center;
+  list-style: none;
 }

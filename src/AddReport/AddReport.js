@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
 import uuid from 'react-uuid';
 
@@ -71,6 +72,7 @@ class AddReport extends Component {
               maxLength="3"
               value={this.state.pt_initials}
               onChange={this.handleChange}
+              required
             />
 
             <label htmlFor="diagnosis">Diagnosis:</label>
@@ -91,6 +93,7 @@ class AddReport extends Component {
               onChange={this.handleChange}
             />
             <input type='submit' value='Submit' />
+            <button><Link to='/report-list'>Cancel</Link></button>
           </form>
         </div>
       </div>

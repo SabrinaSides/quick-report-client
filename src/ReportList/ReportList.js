@@ -14,12 +14,12 @@ class ReportList extends Component {
         <h2> Report Collection </h2>
         <ul className='report-tabs'>
           {reports.map((report) => {
-            return <li key={report.pt_id} className='room-tab'><Link to={`/report/${report.pt_id}`}>{report.room_number}</Link></li>;
+            return <li key={report.pt_id} className='folder-report-tab'><Link to={`/report/${report.pt_id}`} className='text-link'>{report.room_number}</Link></li>;
           })}
         </ul>
 
-        <div className="folder-container">
-          <Link to ='/add-report'>+ Add New Report</Link>
+        <div className="folder-body">
+          <Link to ='/add-report' className='text-link'>+ Add New Report</Link>
           <h3> Choose a tab to see the full patient report</h3>
         </div>
       </div>
