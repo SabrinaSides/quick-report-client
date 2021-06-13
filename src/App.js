@@ -43,7 +43,7 @@ class App extends Component {
 
   handleDeleteReport = (report_id) => {
     this.setState({
-      reports: reports.filter((report) => report.pt_id !== report_id),
+      reports: this.state.reports.filter((report) => report.pt_id !== report_id),
     });
   };
 
