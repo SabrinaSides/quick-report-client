@@ -43,6 +43,7 @@ class ReportPage extends Component {
           <li>Gender: {chosenReport.gender}</li>
           <li>Diagnosis: {chosenReport.diagnosis}</li>
           <li>Allergies: {chosenReport.allergies}</li>
+          <li>Code Status: {chosenReport.code_status}</li>
 
           <h3>Neuro:</h3>
           <li>Alert and Oriented: {chosenReport.A_O}</li>

@@ -171,7 +171,7 @@ class AddReport extends Component {
             <label htmlFor="pupils">Pupils:</label>
             <select
               id="pupils"
-              name="pupils]"
+              name="pupils"
               value={this.state.pupils}
               onChange={this.handleChange}
             >
