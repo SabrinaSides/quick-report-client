@@ -58,7 +58,7 @@ class AddReport extends Component {
     })
   }
 
-  //need to update app state
+
   handleSubmit = (event) => {
     event.preventDefault();
     const { room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report} = this.state;

@@ -25,7 +25,7 @@ class ReportPage extends Component {
       <div className="full-report-container">
         <div className='tab-and-back-btn'>
         <div className="folder-report-tab">
-          <p>Room {chosenReport.room_number}</p>
+          <p>Room {chosenReport.room_number}, {chosenReport.pt_initials}</p>
         </div>
         <button className='back-btn' onClick={() => this.props.history.push('/report-list')}>
             Back
@@ -72,7 +72,7 @@ class ReportPage extends Component {
           <li>Additinal Report: {chosenReport.additional_report}</li>
         </ul>
        
-      </div>
+      </div> 
     ) : (
       <div />
     );

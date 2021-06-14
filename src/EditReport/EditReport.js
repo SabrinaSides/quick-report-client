@@ -16,20 +16,6 @@ class EditReport extends Component {
     }
   }
 
-  //finding chosen report (from route parameter) and setting state to single chosen report
-  componentDidMount(){
-    // const { pt_id } = this.props.match.params;
-    // const { report } = this.state
-    // const findReport = (report, pt_id) => 
-    //   report.find((report) => report.pt_id === pt_id);
-
-    // const chosenReport = findReport(report, pt_id)
-
-    // this.setState({
-    //   report: chosenReport
-    // })
-  }
-
   handleChange = (event) => {
     const target = event.target;
     const value = target.value;
@@ -40,13 +26,12 @@ class EditReport extends Component {
     });
   };
 
-  //need to update app state
+
   handleSubmit = event => {
     event.preventDefault();
     const { pt_id, room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report} = this.state
     const editedReport = { pt_id, room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report}
     this.context.editReport(editedReport)
-    console.log('editedreport', editedReport)
     this.props.history.goBack()
   }
 

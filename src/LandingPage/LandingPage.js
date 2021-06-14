@@ -1,5 +1,5 @@
 import React from 'react';
-import SignUpForm from '../SignUpForm/SignUpForm'
+//import SignUpForm from '../SignUpForm/SignUpForm'
 import './LandingPage.css'
 
 function LandingPage() {
@@ -21,7 +21,7 @@ function LandingPage() {
           <p>Here's another intriguing paragraph</p>
         </div>
       </div>
-      <SignUpForm />
+      {/* <SignUpForm /> */}
     </div>
   );
 }

@@ -6,7 +6,8 @@ import ReportList from './ReportList/ReportList';
 import AddReport from './AddReport/AddReport';
 import ReportPage from './ReportPage/ReportPage';
 import EditReport from './EditReport/EditReport';
-import Navbar from './Navbar/Navbar';
+import NavbarLanding from './Navbar/NavbarLanding';
+import NavbarMain from './Navbar/NavbarMain';
 import './App.css';
 import reports from './dummy-store';
 import SignInPage from './SignInPage/SignInPage';
@@ -44,7 +45,9 @@ class App extends Component {
 
   handleDeleteReport = (report_id) => {
     this.setState({
-      reports: this.state.reports.filter((report) => report.pt_id !== report_id),
+      reports: this.state.reports.filter(
+        (report) => report.pt_id !== report_id
+      ),
     });
   };
 
@@ -59,7 +62,13 @@ class App extends Component {
     return (
       <ReportContext.Provider value={contextValue}>
         <div className="App">
-          <Navbar />
+          <Route exact path="/" component={NavbarLanding} />
+          {['/report-list', '/add-report', '/edit-report', 'report/:id'].map(
+            (path) => (
+              <Route path={path} component={NavbarMain} />
+            )
+          )}
+
           <h1 className="header">
             <Link to="/report-list" className="text-link">
               QuickReport
@@ -71,7 +80,7 @@ class App extends Component {
             <Route path="/add-report" component={AddReport} />
             <Route path="/edit-report/:pt_id" component={EditReport} />
             <Route path="/report/:pt_id" component={ReportPage} />
-            <Route path='/sign-in' component={SignInPage} />
+            <Route path="/sign-in" component={SignInPage} />
           </main>
         </div>
       </ReportContext.Provider>
