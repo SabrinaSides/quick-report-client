@@ -1,0 +1,12 @@
+h2 {
+  text-align: center;
+}
+
+.report-tabs {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0;
+  padding: 5px;
+  text-align: center;
+  list-style: none;
+}

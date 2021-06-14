@@ -19,7 +19,7 @@ function SignUpForm() {
         />
         <label>Password:</label>
         <input
-        type='password'
+        type='text'
         />
         <br />
         <button>Sign Up</button>

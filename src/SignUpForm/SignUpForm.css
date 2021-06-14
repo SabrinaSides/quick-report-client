@@ -1,0 +1,16 @@
+.sign-up-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.sign-up-form {
+  border: solid;
+  color: navy;
+  margin: 10%;
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  padding: 5px;
+}

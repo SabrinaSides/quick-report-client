@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
-import ReportTabs from '../ReportTabs/ReportTabs'
-import '../App.css';
+import './ReportList.css';
 
 class ReportList extends Component {
   static contextType = ReportContext;
@@ -13,12 +12,11 @@ class ReportList extends Component {
     return (
       <div className='report-list'>
         <h2> Report Collection </h2>
-        <ReportTabs />
-        {/* <ul className='report-tabs'>
+        <ul className='report-tabs'>
           {reports.map((report) => {
             return <li key={report.pt_id} className='folder-report-tab'><Link to={`/report/${report.pt_id}`} className='text-link'>Room {report.room_number}, {report.pt_initials}</Link></li>;
           })}
-        </ul> */}
+        </ul>
 
         <div className="folder-body">
           <Link to ='/add-report' className='text-link'>+ Add New Report</Link>
