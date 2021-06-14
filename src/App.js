@@ -9,6 +9,7 @@ import EditReport from './EditReport/EditReport';
 import Navbar from './Navbar/Navbar';
 import './App.css';
 import reports from './dummy-store';
+import SignInPage from './SignInPage/SignInPage';
 
 class App extends Component {
   state = {
@@ -70,6 +71,7 @@ class App extends Component {
             <Route path="/add-report" component={AddReport} />
             <Route path="/edit-report/:pt_id" component={EditReport} />
             <Route path="/report/:pt_id" component={ReportPage} />
+            <Route path='/sign-in' component={SignInPage} />
           </main>
         </div>
       </ReportContext.Provider>

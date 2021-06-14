@@ -20,7 +20,7 @@ function Navbar() {
         <div>
           <ul id="nav-bar">
             <li>
-              <Link to="/sign-out">Sign Out</Link>
+              <Link to="/">Sign Out</Link>
             </li>
             <li>
               <Link to="/report-list">Report List</Link>

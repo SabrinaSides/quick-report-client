@@ -30,6 +30,7 @@ class AddReport extends Component {
     skin: '',
     IV_access: '',
     additional_report: '',
+    user_id: 1
   };
 
   static contextType = ReportContext;

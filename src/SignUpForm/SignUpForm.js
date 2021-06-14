@@ -6,6 +6,7 @@ function SignUpForm() {
     <div className='sign-up-container'>
       <div className='sign-up-form'>
       <h3>Sign Up</h3>
+      <h4>**Sign Up Form is a work in progress, available soon!**</h4>
 
       <form>
          <label>Name:</label>
