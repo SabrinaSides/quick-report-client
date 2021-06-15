@@ -7,26 +7,13 @@ function NavbarLanding() {
         <div>
           <ul id="nav-bar">
             <li>
-              <Link to="/report-list">Demo</Link>
+              <Link to="/reports">Demo</Link>
             </li>
             <li>
               <Link to="/sign-in">Sign In</Link>
             </li>
           </ul>
         </div>
-    //   ) : (
-    //     <div>
-    //       <ul id="nav-bar">
-    //         <li>
-    //           <Link to="/">Sign Out</Link>
-    //         </li>
-    //         <li>
-    //           <Link to="/report-list">Report List</Link>
-    //         </li>
-    //       </ul>
-    //     </div>
-    //   )}
-    // </div>
   );
 }
 

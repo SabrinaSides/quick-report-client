@@ -283,7 +283,7 @@ class EditReport extends Component {
               onChange={this.handleChange}
             />
             <input type='submit' value='Submit' />
-            <button><Link to={`/report/${this.state.pt_id}`}>Cancel</Link></button>
+            <button><Link to={`/reports/${this.state.pt_id}`}>Cancel</Link></button>
           </form>
         </div>
       </div>

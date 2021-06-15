@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 import ReportContext from './ReportContext';
 import LandingPage from './LandingPage/LandingPage';
 import ReportList from './ReportList/ReportList';
@@ -63,24 +63,27 @@ class App extends Component {
       <ReportContext.Provider value={contextValue}>
         <div className="App">
           <Route exact path="/" component={NavbarLanding} />
-          {['/report-list', '/add-report', '/edit-report', 'report/:id'].map(
+          {['/reports', '/add-report', '/edit-report', 'reports/:id'].map(
             (path) => (
               <Route path={path} component={NavbarMain} />
             )
           )}
 
           <h1 className="header">
-            <Link to="/report-list" className="text-link">
+            <Link to="/reports" className="text-link">
               QuickReport
             </Link>
           </h1>
           <main>
+            <Switch>
             <Route exact path="/" component={LandingPage} />
-            <Route path="/report-list" component={ReportList} />
+            <Route path="/reports/:pt_id" component={ReportPage} />
+            <Route path="/reports" component={ReportList} />
             <Route path="/add-report" component={AddReport} />
             <Route path="/edit-report/:pt_id" component={EditReport} />
-            <Route path="/report/:pt_id" component={ReportPage} />
+            {/* <Route path="/reports/:pt_id" component={ReportPage} /> */}
             <Route path="/sign-in" component={SignInPage} />
+            </Switch>
           </main>
         </div>
       </ReportContext.Provider>

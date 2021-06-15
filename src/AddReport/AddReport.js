@@ -315,7 +315,7 @@ class AddReport extends Component {
             />
             <input type="submit" value="Submit" />
             <button>
-              <Link to="/report-list">Cancel</Link>
+              <Link to="/reports">Cancel</Link>
             </button>
           </form>
         </div>

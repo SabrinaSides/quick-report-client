@@ -10,7 +10,7 @@ function NavbarMain() {
               <Link to="/">Sign Out</Link>
             </li>
             <li>
-              <Link to="/report-list">Report List</Link>
+              <Link to="/reports">Report List</Link>
             </li>
           </ul>
           </div>

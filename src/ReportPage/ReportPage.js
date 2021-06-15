@@ -16,7 +16,7 @@ class ReportPage extends Component {
 
     const handleThisDelete = () => {
       this.context.deleteReport(chosenReport.pt_id);
-      this.props.history.push('/report-list');
+      this.props.history.push('/reports');
     };
 
     const chosenReport = findReport(reports, pt_id);
@@ -27,7 +27,7 @@ class ReportPage extends Component {
         <div className="folder-report-tab">
           <p>Room {chosenReport.room_number}, {chosenReport.pt_initials}</p>
         </div>
-        <button className='back-btn' onClick={() => this.props.history.push('/report-list')}>
+        <button className='back-btn' onClick={() => this.props.history.push('/reports')}>
             Back
           </button>
           </div>
