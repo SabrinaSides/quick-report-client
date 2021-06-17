@@ -9,17 +9,18 @@ class ReportPage extends Component {
   render() {
     const { reports } = this.context;
     const { pt_id } = this.props.match.params;
+    const ptId = parseInt(pt_id)
 
 
-    const findReport = (reports, pt_id) =>
-      reports.find((report) => report.pt_id === pt_id);
+    const findReport = (reports, ptId) =>
+      reports.find((report) => report.pt_id === ptId);
 
     const handleThisDelete = () => {
       this.context.deleteReport(chosenReport.pt_id);
       this.props.history.push('/reports');
     };
 
-    const chosenReport = findReport(reports, pt_id);
+    const chosenReport = findReport(reports, ptId);
 
     return chosenReport ? (
       <div className="full-report-container">

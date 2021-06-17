@@ -9,12 +9,14 @@ import EditReport from './EditReport/EditReport';
 import NavbarLanding from './Navbar/NavbarLanding';
 import NavbarMain from './Navbar/NavbarMain';
 import './App.css';
-import reports from './dummy-store';
+//import reports from './dummy-store';
 import SignInPage from './SignInPage/SignInPage';
+import config from './config'
 
 class App extends Component {
   state = {
-    reports: reports,
+    reports: [],
+    error: null
   };
 
   static defaultProps = {
@@ -22,6 +24,20 @@ class App extends Component {
       push: () => {},
     },
   };
+
+  componentDidMount(){
+    console.log('API endpoint', `${config.API_ENDPOINT}/reports`)
+
+    fetch(`${config.API_ENDPOINT}/reports`)
+      .then(res => {
+        if(!res.ok){
+          throw new Error(res.statusText)
+        }
+      return res.json()
+      })
+      .then(reports => {this.setState({reports})})
+      .catch((error) => this.setState(error))
+  }
 
   handleAddReport = (newReport) => {
     this.setState({

@@ -6,6 +6,10 @@ import './ReportList.css';
 class ReportList extends Component {
   static contextType = ReportContext;
 
+  static defaultProps = {
+    reports: []
+  }
+
   render() {
     const { reports } = this.context;
 
