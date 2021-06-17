@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
+import config from '../config';
 
 class EditReport extends Component {
   state = {
-    ...this.context.reports.find((report) => report.pt_id === this.props.match.params.pt_id)
+    ...this.context.reports.find(
+      (report) => report.pt_id === parseInt(this.props.match.params.pt_id)
+    ),
   };
 
   static contextType = ReportContext;
@@ -12,9 +15,9 @@ class EditReport extends Component {
   static defaultProps = {
     addReport: () => {},
     history: {
-      goBack: () => {}
-    }
-  }
+      goBack: () => {},
+    },
+  };
 
   handleChange = (event) => {
     const target = event.target;
@@ -26,18 +29,80 @@ class EditReport extends Component {
     });
   };
 
+  handleSubmit = (event) => {
+    const { pt_id } = this.props.match.params;
 
-  handleSubmit = event => {
     event.preventDefault();
-    const { pt_id, room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report} = this.state
-    const editedReport = { pt_id, room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report}
-    this.context.editReport(editedReport)
-    this.props.history.goBack()
-  }
+    const {
+      room_number,
+      pt_initials,
+      diagnosis,
+      allergies,
+      age,
+      gender,
+      code_status,
+      a_o,
+      pupils,
+      other_neuro,
+      heart_rhythm,
+      bp,
+      edema,
+      other_cardiac,
+      lung_sounds,
+      oxygen,
+      other_resp,
+      last_bm,
+      gu,
+      other_gi_gu,
+      skin,
+      iv_access,
+      additional_report,
+      user_id,
+    } = this.state;
+    const editedReport = {
+      room_number,
+      pt_initials,
+      diagnosis,
+      allergies,
+      age,
+      gender,
+      code_status,
+      a_o,
+      pupils,
+      other_neuro,
+      heart_rhythm,
+      bp,
+      edema,
+      other_cardiac,
+      lung_sounds,
+      oxygen,
+      other_resp,
+      last_bm,
+      gu,
+      other_gi_gu,
+      skin,
+      iv_access,
+      additional_report,
+      user_id,
+    };
+    const options = {
+      method: 'PATCH',
+      body: JSON.stringify(editedReport),
+      headers: { 'Content-Type': 'application/json' },
+    };
+
+    fetch(`${config.API_ENDPOINT}/reports/${pt_id}`, options)
+      .then(() => {
+        //this.props.history.push(`/reports/${pt_id}`)
+        this.context.fetchData()
+        //this.props.history.goBack()
+      })
+      .then(() => {
+        this.props.history.goBack()
+      })
+  };
 
   render() {
-    //const {room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report} = this.state
-
     return (
       <div className="full-report-container">
         <div className="folder-report-tab">
@@ -45,7 +110,7 @@ class EditReport extends Component {
         </div>
         <div className="folder-body">
           <form onSubmit={this.handleSubmit}>
-          <h3>Patient Info</h3>
+            <h3>Patient Info</h3>
             <label htmlFor="room_number">Room Number: (required)</label>
             <input
               type="text"
@@ -81,11 +146,13 @@ class EditReport extends Component {
             <select
               id="gender"
               name="gender"
-              value= {this.state.gender}
+              value={this.state.gender}
               onChange={this.handleChange}
             >
               <option value="">---</option>
-              <option value="male" defaultValue>Male</option>
+              <option value="male" defaultValue>
+                Male
+              </option>
               <option value="female">Female</option>
               <option value="non-conforming">Gender Non-conforming</option>
             </select>
@@ -107,7 +174,9 @@ class EditReport extends Component {
               onChange={this.handleChange}
             >
               <option value="">---</option>
-              <option value="full-code" defaultValue>Full Code</option>
+              <option value="full-code" defaultValue>
+                Full Code
+              </option>
               <option value="DNR">DNR</option>
               <option value="comfort-care">Comfort Care</option>
             </select>
@@ -123,11 +192,11 @@ class EditReport extends Component {
 
             <h3>Neuro</h3>
 
-            <label htmlFor="A_O">Alert and Oriented:</label>
+            <label htmlFor="a_o">Alert and Oriented:</label>
             <select
-              id="A_O"
-              name="A_O"
-              value={this.state.A_O}
+              id="a_o"
+              name="a_o"
+              value={this.state.a_o}
               onChange={this.handleChange}
             >
               <option value="">---</option>
@@ -174,9 +243,9 @@ class EditReport extends Component {
             <label htmlFor="BP">BP:</label>
             <input
               type="text"
-              name="BP"
-              id="BP"
-              value={this.state.BP}
+              name="bp"
+              id="bp"
+              value={this.state.bp}
               onChange={this.handleChange}
             />
 
@@ -265,12 +334,12 @@ class EditReport extends Component {
               onChange={this.handleChange}
             />
 
-            <label htmlFor="IV_access">IV Access:</label>
+            <label htmlFor="iv_access">IV Access:</label>
             <input
               type="text"
-              name="IV_access"
-              id="IV_access"
-              value={this.state.IV_access}
+              name="iv_access"
+              id="iv_access"
+              value={this.state.iv_access}
               onChange={this.handleChange}
             />
 
@@ -282,8 +351,10 @@ class EditReport extends Component {
               value={this.state.additional_report}
               onChange={this.handleChange}
             />
-            <input type='submit' value='Submit' />
-            <button><Link to={`/reports/${this.state.pt_id}`}>Cancel</Link></button>
+            <input type="submit" value="Submit" />
+            <button>
+              <Link to={`/reports/${this.state.pt_id}`}>Cancel</Link>
+            </button>
           </form>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
 import { Link } from 'react-router-dom'
+import config from '../config'
 import './ReportPage.css';
 
 class ReportPage extends Component {
@@ -15,9 +16,16 @@ class ReportPage extends Component {
     const findReport = (reports, ptId) =>
       reports.find((report) => report.pt_id === ptId);
 
-    const handleThisDelete = () => {
-      this.context.deleteReport(chosenReport.pt_id);
-      this.props.history.push('/reports');
+    const handleDeleteReport = (pt_id) => {
+      const options = {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+      }
+      fetch(`${config.API_ENDPOINT}/reports/${pt_id}`, options)
+        .then(() => {
+      this.context.fetchData()
+      this.props.history.push('/reports')
+    })
     };
 
     const chosenReport = findReport(reports, ptId);
@@ -35,7 +43,7 @@ class ReportPage extends Component {
         <ul className="folder-body">
         <div className='report-buttons'>
         <button><Link to={`/edit-report/${chosenReport.pt_id}`}>Edit</Link></button>
-        <button onClick={() => handleThisDelete()}>Delete</button>
+        <button onClick={() => handleDeleteReport(chosenReport.pt_id)}>Delete</button>
         </div>
           <h3>Patient Info:</h3>
           <li>Room Number: {chosenReport.room_number}</li>
@@ -47,13 +55,13 @@ class ReportPage extends Component {
           <li>Code Status: {chosenReport.code_status}</li>
 
           <h3>Neuro:</h3>
-          <li>Alert and Oriented: {chosenReport.A_O}</li>
+          <li>Alert and Oriented: {chosenReport.a_o}</li>
           <li>Pupils: {chosenReport.pupils}</li>
           <li>Other Neuro: {chosenReport.other_neuro}</li>
 
           <h3>Cardiac:</h3>
           <li>Rhythm: {chosenReport.heart_rhythm}</li>
-          <li>Blood Pressure: {chosenReport.BP}</li>
+          <li>Blood Pressure: {chosenReport.bp}</li>
           <li>Edema: {chosenReport.edema}</li>
           <li>Other Cardiac: {chosenReport.other_cardiac}</li>
 
@@ -69,7 +77,7 @@ class ReportPage extends Component {
 
           <h3>Other</h3>
           <li>Skin: {chosenReport.skin}</li>
-          <li>IV Access: {chosenReport.IV_access}</li>
+          <li>IV Access: {chosenReport.iv_access}</li>
           <li>Additinal Report: {chosenReport.additional_report}</li>
         </ul>
        

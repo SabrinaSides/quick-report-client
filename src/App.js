@@ -26,8 +26,10 @@ class App extends Component {
   };
 
   componentDidMount(){
-    console.log('API endpoint', `${config.API_ENDPOINT}/reports`)
+    this.handleFetchData()
+  }
 
+  handleFetchData = () => {
     fetch(`${config.API_ENDPOINT}/reports`)
       .then(res => {
         if(!res.ok){
@@ -39,40 +41,10 @@ class App extends Component {
       .catch((error) => this.setState(error))
   }
 
-  handleAddReport = (newReport) => {
-    this.setState({
-      reports: [...this.state.reports, newReport],
-    });
-  };
-
-  handleEditReport = (editedReport) => {
-    const indexOfReport = this.state.reports.findIndex(
-      (report) => report.pt_id === editedReport.pt_id
-    );
-    console.log('index of report', indexOfReport);
-
-    this.setState({
-      reports: [
-        ...this.state.reports.filter((_, i) => i !== indexOfReport),
-        editedReport,
-      ],
-    });
-  };
-
-  handleDeleteReport = (report_id) => {
-    this.setState({
-      reports: this.state.reports.filter(
-        (report) => report.pt_id !== report_id
-      ),
-    });
-  };
-
   render() {
     const contextValue = {
       reports: this.state.reports,
-      addReport: this.handleAddReport,
-      deleteReport: this.handleDeleteReport,
-      editReport: this.handleEditReport,
+      fetchData: this.handleFetchData,
     };
 
     return (
@@ -97,7 +69,6 @@ class App extends Component {
             <Route path="/reports" component={ReportList} />
             <Route path="/add-report" component={AddReport} />
             <Route path="/edit-report/:pt_id" component={EditReport} />
-            {/* <Route path="/reports/:pt_id" component={ReportPage} /> */}
             <Route path="/sign-in" component={SignInPage} />
             </Switch>
           </main>

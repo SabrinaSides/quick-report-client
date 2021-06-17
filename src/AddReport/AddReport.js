@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
-import uuid from 'react-uuid';
+import config from '../config';
+//import uuid from 'react-uuid';
 //import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+//import "react-datepicker/dist/react-datepicker.css";
 
 class AddReport extends Component {
   state = {
@@ -14,11 +15,11 @@ class AddReport extends Component {
     diagnosis: '',
     allergies: '',
     code_status: '',
-    A_O: '',
+    a_o: '',
     pupils: '',
     other_neuro: '',
     heart_rhythm: '',
-    BP: '',
+    bp: '',
     edema: '',
     other_cardiac: '',
     lung_sounds: '',
@@ -28,15 +29,14 @@ class AddReport extends Component {
     gu: '',
     other_gi_gu: '',
     skin: '',
-    IV_access: '',
+    iv_access: '',
     additional_report: '',
-    user_id: 1
+    user_id: 1,
   };
 
   static contextType = ReportContext;
 
   static defaultProps = {
-    addReport: () => {},
     history: {
       goBack: () => {},
     },
@@ -52,20 +52,90 @@ class AddReport extends Component {
     });
   };
 
-  handleChangeCalendar = (selected) => {
-    this.setState({
-      last_bm: selected
-    })
-  }
-
+  // handleChangeCalendar = (selected) => {
+  //   this.setState({
+  //     last_bm: selected
+  //   })
+  // }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report} = this.state;
-    const pt_id = uuid();
-    const newReport = { pt_id, room_number, pt_initials, diagnosis, allergies, age, gender, code_status, A_O, pupils, other_neuro, heart_rhythm, BP, edema, other_cardiac, lung_sounds, oxygen, other_resp, last_bm, gu, other_gi_gu, skin, IV_access, additional_report};
-    this.context.addReport(newReport);
-    this.props.history.goBack();
+    const {
+      room_number,
+      pt_initials,
+      diagnosis,
+      allergies,
+      age,
+      gender,
+      code_status,
+      a_o,
+      pupils,
+      other_neuro,
+      heart_rhythm,
+      bp,
+      edema,
+      other_cardiac,
+      lung_sounds,
+      oxygen,
+      other_resp,
+      last_bm,
+      gu,
+      other_gi_gu,
+      skin,
+      iv_access,
+      additional_report,
+      user_id,
+    } = this.state;
+    //const pt_id = uuid();
+    const newReport = {
+      room_number,
+      pt_initials,
+      diagnosis,
+      allergies,
+      age,
+      gender,
+      code_status,
+      a_o,
+      pupils,
+      other_neuro,
+      heart_rhythm,
+      bp,
+      edema,
+      other_cardiac,
+      lung_sounds,
+      oxygen,
+      other_resp,
+      last_bm,
+      gu,
+      other_gi_gu,
+      skin,
+      iv_access,
+      additional_report,
+      user_id,
+    };
+    //this.context.addReport(newReport);
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(newReport),
+      headers: { 'Content-Type': 'application/json' },
+    };
+
+    fetch(`${config.API_ENDPOINT}/reports)`, options)
+      .then(res => {
+        // if (!res.ok) {
+        //   throw new Error('Something went wrong, please try again later.');
+        // }
+        console.log(res)
+      })
+      .then(() => {
+        this.props.history.goBack();
+        this.context.fetchData();
+      })
+      .catch((error) => {
+        this.setState({
+          error
+        });
+      });
   };
 
   render() {
@@ -112,11 +182,13 @@ class AddReport extends Component {
             <select
               id="gender"
               name="gender"
-              value= {this.state.gender}
+              value={this.state.gender}
               onChange={this.handleChange}
             >
               <option value="">---</option>
-              <option value="male" defaultValue>Male</option>
+              <option value="male" defaultValue>
+                Male
+              </option>
               <option value="female">Female</option>
               <option value="non-conforming">Gender Non-conforming</option>
             </select>
@@ -138,7 +210,9 @@ class AddReport extends Component {
               onChange={this.handleChange}
             >
               <option value="">---</option>
-              <option value="full-code" defaultValue>Full Code</option>
+              <option value="full-code" defaultValue>
+                Full Code
+              </option>
               <option value="DNR">DNR</option>
               <option value="comfort-care">Comfort Care</option>
             </select>
@@ -154,11 +228,11 @@ class AddReport extends Component {
 
             <h3>Neuro</h3>
 
-            <label htmlFor="A_O">Alert and Oriented:</label>
+            <label htmlFor="a_o">Alert and Oriented:</label>
             <select
-              id="A_O"
-              name="A_O"
-              value={this.state.A_O}
+              id="a_o"
+              name="a_o"
+              value={this.state.a_o}
               onChange={this.handleChange}
             >
               <option value="">---</option>
@@ -177,7 +251,9 @@ class AddReport extends Component {
               onChange={this.handleChange}
             >
               <option value="">---</option>
-              <option value="PERRLA" defaultValue>PERRLA</option>
+              <option value="PERRLA" defaultValue>
+                PERRLA
+              </option>
               <option value="sluggish">Sluggish</option>
               <option value="fixed">Fixed</option>
               <option value="unequal">Unequal</option>
@@ -202,12 +278,12 @@ class AddReport extends Component {
               onChange={this.handleChange}
             />
 
-            <label htmlFor="BP">BP:</label>
+            <label htmlFor="bp">BP:</label>
             <input
               type="text"
-              name="BP"
-              id="BP"
-              value={this.state.BP}
+              name="bp"
+              id="bp"
+              value={this.state.bp}
               onChange={this.handleChange}
             />
 
@@ -296,12 +372,12 @@ class AddReport extends Component {
               onChange={this.handleChange}
             />
 
-            <label htmlFor="IV_access">IV Access:</label>
+            <label htmlFor="iv_access">IV Access:</label>
             <input
               type="text"
-              name="IV_access"
-              id="IV_access"
-              value={this.state.IV_access}
+              name="iv_access"
+              id="iv_access"
+              value={this.state.iv_access}
               onChange={this.handleChange}
             />
 
