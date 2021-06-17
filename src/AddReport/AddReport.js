@@ -120,12 +120,12 @@ class AddReport extends Component {
       headers: { 'Content-Type': 'application/json' },
     };
 
-    fetch(`${config.API_ENDPOINT}/reports)`, options)
-      .then(res => {
-        // if (!res.ok) {
-        //   throw new Error('Something went wrong, please try again later.');
-        // }
-        console.log(res)
+    fetch(`${config.API_ENDPOINT}/reports`, options)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Something went wrong, please try again later.');
+        }
+        console.log(res);
       })
       .then(() => {
         this.props.history.goBack();
@@ -133,7 +133,7 @@ class AddReport extends Component {
       })
       .catch((error) => {
         this.setState({
-          error
+          error,
         });
       });
   };
