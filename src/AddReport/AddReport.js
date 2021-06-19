@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
 import config from '../config';
-//import uuid from 'react-uuid';
 //import DatePicker from "react-datepicker";
 //import "react-datepicker/dist/react-datepicker.css";
 
@@ -86,7 +85,6 @@ class AddReport extends Component {
       additional_report,
       user_id,
     } = this.state;
-    //const pt_id = uuid();
     const newReport = {
       room_number,
       pt_initials,
@@ -113,7 +111,7 @@ class AddReport extends Component {
       additional_report,
       user_id,
     };
-    //this.context.addReport(newReport);
+
     const options = {
       method: 'POST',
       body: JSON.stringify(newReport),
@@ -389,10 +387,12 @@ class AddReport extends Component {
               value={this.state.additional_report}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Submit" />
-            <button>
+            <div className='submit-cancel-btns'>
+            <input type="submit" value="Submit" className='submit-btn'/>
+            <button className='cancel-btn'>
               <Link to="/reports">Cancel</Link>
             </button>
+            </div>
           </form>
         </div>
       </div>

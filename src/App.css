@@ -11,3 +11,18 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+h2 {
+  text-align: center;
+}
+
+#add-btn {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+
+.submit-cancel-btns {
+  display: flex;
+  flex: row;
+  justify-content: space-evenly;
+}

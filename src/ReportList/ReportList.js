@@ -22,9 +22,10 @@ class ReportList extends Component {
           })}
         </ul>
 
-        <div className="folder-body">
-          <Link to ='/add-report' className='text-link'>+ Add New Report</Link>
+        <div className="folder-body folder-body-report-list">
           <h3> Choose a tab to see the full patient report</h3>
+          <h3>OR</h3>
+          <button id='add-btn'><Link to ='/add-report' className='text-link'>+ Add New Report</Link></button>
         </div>
       </div>
     );

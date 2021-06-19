@@ -3,6 +3,7 @@ import ReportContext from '../ReportContext';
 import { Link } from 'react-router-dom'
 import config from '../config'
 import './ReportPage.css';
+import ReportTabs from '../ReportTabs/ReportTabs'
 
 class ReportPage extends Component {
   static contextType = ReportContext;
@@ -11,7 +12,6 @@ class ReportPage extends Component {
     const { reports } = this.context;
     const { pt_id } = this.props.match.params;
     const ptId = parseInt(pt_id)
-
 
     const findReport = (reports, ptId) =>
       reports.find((report) => report.pt_id === ptId);
@@ -33,9 +33,7 @@ class ReportPage extends Component {
     return chosenReport ? (
       <div className="full-report-container">
         <div className='tab-and-back-btn'>
-        <div className="folder-report-tab">
-          <p>Room {chosenReport.room_number}, {chosenReport.pt_initials}</p>
-        </div>
+        <ReportTabs chosenReport={chosenReport} />
         <button className='back-btn' onClick={() => this.props.history.push('/reports')}>
             Back
           </button>
@@ -78,7 +76,7 @@ class ReportPage extends Component {
           <h3>Other</h3>
           <li>Skin: {chosenReport.skin}</li>
           <li>IV Access: {chosenReport.iv_access}</li>
-          <li>Additinal Report: {chosenReport.additional_report}</li>
+          <li>Additional Report: {chosenReport.additional_report}</li>
         </ul>
        
       </div> 
