@@ -11,12 +11,12 @@ import NavbarMain from './Navbar/NavbarMain';
 import './App.css';
 //import reports from './dummy-store';
 import SignInPage from './SignInPage/SignInPage';
-import config from './config'
+import config from './config';
 
 class App extends Component {
   state = {
     reports: [],
-    error: null
+    error: null,
   };
 
   static defaultProps = {
@@ -25,21 +25,23 @@ class App extends Component {
     },
   };
 
-  componentDidMount(){
-    this.handleFetchData()
+  componentDidMount() {
+    this.handleFetchData();
   }
 
   handleFetchData = () => {
     fetch(`${config.API_ENDPOINT}/reports`)
-      .then(res => {
-        if(!res.ok){
-          throw new Error(res.statusText)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
         }
-      return res.json()
+        return res.json();
       })
-      .then(reports => {this.setState({reports})})
-      .catch((error) => this.setState(error))
-  }
+      .then((reports) => {
+        this.setState({ reports });
+      })
+      .catch((error) => this.setState(error));
+  };
 
   render() {
     const contextValue = {
@@ -64,12 +66,12 @@ class App extends Component {
           </h1>
           <main>
             <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/reports/:pt_id" component={ReportPage} />
-            <Route path="/reports" component={ReportList} />
-            <Route path="/add-report" component={AddReport} />
-            <Route path="/edit-report/:pt_id" component={EditReport} />
-            <Route path="/sign-in" component={SignInPage} />
+              <Route exact path="/" component={LandingPage} />
+              <Route path="/reports/:pt_id" component={ReportPage} />
+              <Route path="/reports" component={ReportList} />
+              <Route path="/add-report" component={AddReport} />
+              <Route path="/edit-report/:pt_id" component={EditReport} />
+              <Route path="/sign-in" component={SignInPage} />
             </Switch>
           </main>
         </div>

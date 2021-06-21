@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReportTabs from '../ReportTabs/ReportTabs'
 import './ReportList.css';
 
-function ReportList(){
+class ReportList extends Component{
+  render(){
     return (
       <div className='report-list'>
         <h2> Report Collection </h2>   
@@ -14,7 +15,8 @@ function ReportList(){
           <button id='add-btn' onClick={() => this.props.history.push('/add-report')}>+ Add New Report</button>
         </div>
       </div>
-    );
+    )
+  }
   }
 
 export default ReportList;
