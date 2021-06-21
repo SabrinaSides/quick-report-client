@@ -53,7 +53,7 @@ class App extends Component {
           <Route exact path="/" component={NavbarLanding} />
           {['/reports', '/add-report', '/edit-report', 'reports/:id'].map(
             (path) => (
-              <Route path={path} component={NavbarMain} />
+              <Route key={path} path={path} component={NavbarMain} />
             )
           )}
 

@@ -1,26 +1,12 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import ReportContext from '../ReportContext';
+import React from 'react';
+import ReportTabs from '../ReportTabs/ReportTabs'
 import './ReportList.css';
 
-class ReportList extends Component {
-  static contextType = ReportContext;
-
-  static defaultProps = {
-    reports: []
-  }
-
-  render() {
-    const { reports } = this.context;
-
+function ReportList(){
     return (
       <div className='report-list'>
-        <h2> Report Collection </h2>
-        <ul className='report-tabs'>
-          {reports.map((report) => {
-            return <li key={report.pt_id} className='folder-report-tab' onClick={() => this.props.history.push(`/reports/${report.pt_id}`)}>Room {report.room_number}, {report.pt_initials}</li>;
-          })}
-        </ul>
+        <h2> Report Collection </h2>   
+          <ReportTabs/>
 
         <div className="folder-body folder-body-report-list">
           <h3> Choose a tab to see the full patient report</h3>
@@ -30,6 +16,5 @@ class ReportList extends Component {
       </div>
     );
   }
-}
 
 export default ReportList;

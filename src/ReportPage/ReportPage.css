@@ -42,4 +42,18 @@
 .back-btn {
   height: 8%;
 }
-/* room tab css in ReportList */
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding-top: 5px;
+}
+
+.report-section-header {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 20px;
+  padding-top: 10px;
+}

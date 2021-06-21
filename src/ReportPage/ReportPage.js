@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
-import { Link } from 'react-router-dom'
 import config from '../config'
 import './ReportPage.css';
 import ReportTabs from '../ReportTabs/ReportTabs'
@@ -33,17 +32,18 @@ class ReportPage extends Component {
     return chosenReport ? (
       <div className="full-report-container">
         <div className='tab-and-back-btn'>
-        <ReportTabs chosenReport={chosenReport} />
+        <ReportTabs ptId={chosenReport.pt_id} />
         <button className='back-btn' onClick={() => this.props.history.push('/reports')}>
             Back
           </button>
           </div>
-        <ul className="folder-body">
+        <section className='folder-body'>
         <div className='report-buttons'>
         <button onClick={() => this.props.history.push(`/edit-report/${chosenReport.pt_id}`)}>Edit</button>
         <button onClick={() => handleDeleteReport(chosenReport.pt_id)}>Delete</button>
         </div>
-          <h3>Patient Info:</h3>
+        <ul>
+          <li className='report-section-header'>Patient Info:</li>
           <li>Room Number: {chosenReport.room_number}</li>
           <li>Patient Initials: {chosenReport.pt_initials}</li>
           <li>Age: {chosenReport.age}</li>
@@ -52,37 +52,41 @@ class ReportPage extends Component {
           <li>Allergies: {chosenReport.allergies}</li>
           <li>Code Status: {chosenReport.code_status}</li>
 
-          <h3>Neuro:</h3>
+          <li className='report-section-header'>Neuro:</li >
           <li>Alert and Oriented: {chosenReport.a_o}</li>
           <li>Pupils: {chosenReport.pupils}</li>
           <li>Other Neuro: {chosenReport.other_neuro}</li>
 
-          <h3>Cardiac:</h3>
+          <li className='report-section-header'>Cardiac:</li >
           <li>Rhythm: {chosenReport.heart_rhythm}</li>
           <li>Blood Pressure: {chosenReport.bp}</li>
           <li>Edema: {chosenReport.edema}</li>
           <li>Other Cardiac: {chosenReport.other_cardiac}</li>
 
-          <h3>Respiratory:</h3>
+          <li className='report-section-header'>Respiratory:</li >
           <li>Lung Sounds: {chosenReport.lung_sounds}</li>
           <li>Oxygen Requirement: {chosenReport.oxygen}</li>
           <li>Other Respiratory: {chosenReport.other_resp}</li>
 
-          <h3>GI/GU</h3>
+          <li className='report-section-header'>GI/GU</li >
           <li>Last BM: {chosenReport.last_bm}</li>
           <li>GU: {chosenReport.gu}</li>
           <li>Other GI/GU: {chosenReport.other_gi_gu}</li>
 
-          <h3>Other</h3>
+          <li className='report-section-header'>Other</li >
           <li>Skin: {chosenReport.skin}</li>
           <li>IV Access: {chosenReport.iv_access}</li>
           <li>Additional Report: {chosenReport.additional_report}</li>
         </ul>
-       
+        </section>
       </div> 
+      
     ) : (
-      <div />
+      <div>
+        <li >Sorry, no report found. Please try again with a different URL</li >
+        </div>
     );
+    
   }
 }
 
