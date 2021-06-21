@@ -387,11 +387,14 @@ class AddReport extends Component {
               value={this.state.additional_report}
               onChange={this.handleChange}
             />
-            <div className='submit-cancel-btns'>
-            <input type="submit" value="Submit" className='submit-btn'/>
-            <button className='cancel-btn'>
-              <Link to="/reports">Cancel</Link>
-            </button>
+            <div className="submit-cancel-btns">
+              <input type="submit" value="Submit" className="submit-btn" />
+              <button
+                className="cancel-btn"
+                onClick={() => this.props.history.push('/reports')}
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>

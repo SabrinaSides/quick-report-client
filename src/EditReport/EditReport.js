@@ -93,13 +93,11 @@ class EditReport extends Component {
 
     fetch(`${config.API_ENDPOINT}/reports/${pt_id}`, options)
       .then(() => {
-        //this.props.history.push(`/reports/${pt_id}`)
-        this.context.fetchData()
-        //this.props.history.goBack()
+        this.context.fetchData();
       })
       .then(() => {
-        this.props.history.goBack()
-      })
+        this.props.history.goBack();
+      });
   };
 
   render() {
@@ -352,8 +350,12 @@ class EditReport extends Component {
               onChange={this.handleChange}
             />
             <input type="submit" value="Submit" />
-            <button>
-              <Link to={`/reports/${this.state.pt_id}`}>Cancel</Link>
+            <button
+              onClick={() =>
+                this.props.history.push(`/reports/${this.state.pt_id}`)
+              }
+            >
+              Cancel
             </button>
           </form>
         </div>

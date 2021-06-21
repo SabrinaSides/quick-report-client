@@ -40,7 +40,7 @@ class ReportPage extends Component {
           </div>
         <ul className="folder-body">
         <div className='report-buttons'>
-        <button><Link to={`/edit-report/${chosenReport.pt_id}`}>Edit</Link></button>
+        <button onClick={() => this.props.history.push(`/edit-report/${chosenReport.pt_id}`)}>Edit</button>
         <button onClick={() => handleDeleteReport(chosenReport.pt_id)}>Delete</button>
         </div>
           <h3>Patient Info:</h3>
