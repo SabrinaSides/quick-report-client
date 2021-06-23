@@ -7,9 +7,6 @@ class NavbarMain extends Component {
       <div>
         <ul className='nav-bar'>
           <li onClick={() => this.props.history.push('/')}>Sign Out</li>
-          <li onClick={() => this.props.history.push('/reports')}>
-            Report List
-          </li>
         </ul>
       </div>
     );

@@ -10,7 +10,7 @@ class NavbarLanding extends Component {
               Demo
             </li>
             <li onClick={() => this.props.history.push('/sign-in')}>
-              Sign In
+              Sign In |
             </li>
           </ul>
         </div>

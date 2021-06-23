@@ -24,3 +24,17 @@
   font-size: 25px;
   padding-top: 10px;
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .folder-body-content > li {
+    font-size: 20px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .folder-body-content > li {
+    font-size: 25px;
+  }
+}

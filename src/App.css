@@ -5,6 +5,7 @@
   box-sizing: border-box;
   background-color: #0367a6;
   color: white;
+  margin-top: 1%;
 }
 
 .App {
@@ -34,6 +35,7 @@ form {
   flex-direction: column;
   color: black;
   background-color: #d9b19a;
+  margin: 5px 10px;
 }
 
 form > label {
@@ -73,7 +75,7 @@ form > select {
   margin: 0 auto;
   margin-bottom: 5%;
   min-height: 250px;
-  border-top-right-radius: 5%;
+  border-top-right-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -94,8 +96,8 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 35px;
-  margin-top: 10px;
+  font-size: 30px;
+  margin-top: 5px;
   color: white;
 }
 
@@ -146,7 +148,24 @@ ul {
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   .folder-body {
+    padding-top: 40px;
     min-height: 350px;
+  }
+
+  form {
+    margin: 5px 30px;
+  }
+
+  form > input {
+    font-size: 17px;
+  }
+
+  form > select {
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 80px;
   }
 
   h3 {
@@ -164,12 +183,21 @@ ul {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  button {
+    font-size: 25px;
+  }
+
+  form > label {
+    font-size: 22px;
+  }
+
   .folder-body {
     min-height: 400px;
+    padding-top: 50px;
   }
 
   h3 {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .header {
@@ -177,6 +205,6 @@ ul {
   }
 
   p {
-    font-size: 40px;
+    font-size: 30px;
   }
 }

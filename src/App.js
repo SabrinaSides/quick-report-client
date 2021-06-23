@@ -58,10 +58,8 @@ class App extends Component {
             )
           )}
 
-          <h1
-            className='header'
-            onClick={() => this.props.history.push('/reports')}
-          >
+          <h1 className='header'
+            onClick={() => this.props.history.push('/reports')}>
             QuickReport
           </h1>
           <main>
