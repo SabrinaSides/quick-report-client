@@ -102,7 +102,7 @@ class EditReport extends Component {
     return (
       <div className="full-report-container">
         <div className="folder-report-tab">
-          <p>Edit Report: {this.state.room_number}</p>
+          <h3>Edit Report:</h3>
         </div>
         <div className="folder-body">
           <form onSubmit={this.handleSubmit}>
@@ -347,7 +347,7 @@ class EditReport extends Component {
               value={this.state.additional_report}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Submit" />
+            <button type="submit" className="submit-btn">Submit</button>
             <button
               onClick={() =>
                 this.props.history.push(`/reports/${this.state.pt_id}`)

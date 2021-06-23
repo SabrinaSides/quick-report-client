@@ -1,3 +1,18 @@
+.folder-report-tab {
+  border: solid;
+  color: black;
+  background-color: beige;
+  /* for selected tab color see inline style in ReportTabs component*/
+  margin-bottom: 0px;
+  margin-left: 2%;
+  padding: 5px;
+  text-align: center;
+  border-bottom: none;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  max-width: 30%;
+}
+
 .report-tabs {
   display: flex;
   flex-flow: row nowrap;

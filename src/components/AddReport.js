@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
 import config from '../config';
+import '../styles/AddReport.css'
 //import DatePicker from "react-datepicker";
 //import "react-datepicker/dist/react-datepicker.css";
 
@@ -138,8 +139,8 @@ class AddReport extends Component {
   render() {
     return (
       <div className="full-report-container">
-        <div className="folder-report-tab">
-          <p>New Patient</p>
+        <div className="folder-report-tab new-patient-tab">
+          <h3>New Patient</h3>
         </div>
         <div className="folder-body">
           <form onSubmit={this.handleSubmit}>
@@ -387,7 +388,7 @@ class AddReport extends Component {
               onChange={this.handleChange}
             />
             <div className="submit-cancel-btns">
-              <input type="submit" value="Submit" className="submit-btn" />
+              <button type="submit" className="submit-btn">Submit</button>
               <button
                 className="cancel-btn"
                 onClick={() => this.props.history.push('/reports')}

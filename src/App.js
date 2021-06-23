@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Route, Link, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ReportContext from './ReportContext';
 import LandingPage from './components/LandingPage';
-import ReportList from './components/ReportList';
+import ReportMain from './components/ReportMain';
 import AddReport from './components/AddReport';
 import ReportPage from './components/ReportPage';
 import EditReport from './components/EditReport';
@@ -50,27 +50,28 @@ class App extends Component {
 
     return (
       <ReportContext.Provider value={contextValue}>
-        <div className="App">
-          <Route exact path="/" component={NavbarLanding} />
+        <div className='App'>
+          <Route exact path='/' component={NavbarLanding} />
           {['/reports', '/add-report', '/edit-report', 'reports/:id'].map(
             (path) => (
               <Route key={path} path={path} component={NavbarMain} />
             )
           )}
 
-          <h1 className="header">
-            <Link to="/reports" className="text-link">
-              QuickReport
-            </Link>
+          <h1
+            className='header text-link'
+            onClick={() => this.props.history.push('/reports')}
+          >
+            QuickReport
           </h1>
           <main>
             <Switch>
-              <Route exact path="/" component={LandingPage} />
-              <Route path="/reports/:pt_id" component={ReportPage} />
-              <Route path="/reports" component={ReportList} />
-              <Route path="/add-report" component={AddReport} />
-              <Route path="/edit-report/:pt_id" component={EditReport} />
-              <Route path="/sign-in" component={SignInPage} />
+              <Route exact path='/' component={LandingPage} />
+              <Route path='/reports/:pt_id' component={ReportPage} />
+              <Route path='/reports' component={ReportMain} />
+              <Route path='/add-report' component={AddReport} />
+              <Route path='/edit-report/:pt_id' component={EditReport} />
+              <Route path='/sign-in' component={SignInPage} />
             </Switch>
           </main>
         </div>

@@ -1,4 +1,9 @@
-.folder-body-report-list {
+.add-btn {
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+.folder-body-report-main {
   display: flex;
   flex-direction: column;
   justify-content: center;

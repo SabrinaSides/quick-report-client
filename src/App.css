@@ -1,10 +1,29 @@
-.header {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+* {
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.text-link {
+.App {
+  margin-right: 5%;
+  margin-left: 5%;
+  font-family: 'Just Another Hand', sans-serif;
+}
+
+button {
+  border: 0;
+  border-radius: 0.25rem;
+  background: #1e88e5;
+  color: white;
+  font-family: 'Just Another Hand', sans-serif;
+  font-size: 20px;
+  line-height: 1.5;
+  white-space: nowrap;
   text-decoration: none;
-  color: black;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
 }
 
 form {
@@ -12,17 +31,81 @@ form {
   flex-direction: column;
 }
 
-h2 {
-  text-align: center;
+.folder-body {
+  border: solid;
+  color: black;
+  background-color: rgb(240, 219, 193);
+  margin: 0 auto;
+  min-height: 250px;
 }
 
-#add-btn {
-  margin-left: 40%;
-  margin-right: 40%;
+h2 {
+  text-align: center;
+  font-size: 35px;
+  margin-top: 10px;
+}
+
+h3 {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+
+.header {
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 20px;
+  color: black;
 }
 
 .submit-cancel-btns {
   display: flex;
   flex: row;
   justify-content: space-evenly;
+}
+
+.text-link {
+  text-decoration: none;
+  color: black;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .folder-body {
+    min-height: 350px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .header {
+    font-size: 60px;
+  }
+
+  p {
+    font-size: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .folder-body {
+    min-height: 400px;
+  }
+
+  h3 {
+    font-size: 40px;
+  }
+
+  .header {
+    font-size: 80px;
+  }
+
+  p {
+    font-size: 40px;
+  }
 }

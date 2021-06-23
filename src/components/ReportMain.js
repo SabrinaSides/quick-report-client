@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import ReportTabs from './ReportTabs';
-import '../styles/ReportList.css';
+import '../styles/ReportMain.css';
 
-class ReportList extends Component {
+class ReportMain extends Component {
   static defaultProps = {
-    reports: []
-  }
+    reports: [],
+  };
 
   render() {
     return (
-      <div className='report-list'>
+      <div className='report-Main'>
         <h2> Report Collection </h2>
         <ReportTabs />
 
-        <div className='folder-body folder-body-report-list'>
+        <div className='folder-body folder-body-report-main'>
           <h3> Choose a tab to see the full patient report</h3>
-          <h3>OR</h3>
+          <p>OR</p>
           <button
-            id='add-btn'
+          className='add-btn'
             onClick={() => this.props.history.push('/add-report')}
           >
             + Add New Report
@@ -28,4 +28,4 @@ class ReportList extends Component {
   }
 }
 
-export default ReportList;
+export default ReportMain;
