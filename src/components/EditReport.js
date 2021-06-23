@@ -12,7 +12,6 @@ class EditReport extends Component {
   static contextType = ReportContext;
 
   static defaultProps = {
-    addReport: () => {},
     history: {
       goBack: () => {},
     },

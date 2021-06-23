@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReportList from '../components/ReportList'
-import ReportContext from '../ReportContext'
+import NavbarLanding from '../components/NavbarLanding'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
-        <ReportList />,
+    <NavbarLanding/>,
     div
   )
   ReactDOM.unmountComponentAtNode(div)

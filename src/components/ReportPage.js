@@ -7,6 +7,12 @@ import ReportTabs from './ReportTabs'
 class ReportPage extends Component {
   static contextType = ReportContext;
 
+  static defaultProps = {
+    match : {
+      params: {}
+    }
+  }
+
   render() {
     const { reports } = this.context;
     const { pt_id } = this.props.match.params;

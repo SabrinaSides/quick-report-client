@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReportList from '../components/ReportList'
-import ReportContext from '../ReportContext'
+import SignInPage from '../components/SignInPage'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
-        <ReportList />,
+    <SignInPage/>,
     div
   )
   ReactDOM.unmountComponentAtNode(div)

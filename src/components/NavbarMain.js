@@ -1,20 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import '../styles/Navbar.css';
 
-function NavbarMain() {
+class NavbarMain extends Component {
+  render(){
   return (
         <div>
           <ul id="nav-bar">
-            <li>
-              <Link to="/">Sign Out</Link>
+            <li onClick={() => this.props.history.push('/')}>
+              Sign Out
             </li>
-            <li>
-              <Link to="/reports">Report List</Link>
+            <li onClick={() => this.props.history.push('/reports')}>
+              Report List
             </li>
           </ul>
           </div>
   )
+  }
 }
 
 export default NavbarMain;

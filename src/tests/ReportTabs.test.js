@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ReportList from '../components/ReportList'
-import ReportContext from '../ReportContext'
+import ReportTabs from '../components/ReportTabs'
 
 it('renders without crashing', () => {
   const div = document.createElement('div')
   ReactDOM.render(
-        <ReportList />,
+    <ReportTabs/>,
     div
   )
   ReactDOM.unmountComponentAtNode(div)

@@ -1,20 +1,21 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 import '../styles/Navbar.css';
 
-function NavbarLanding() {
+class NavbarLanding extends Component {
+  render(){
   return (
         <div>
           <ul id="nav-bar">
-            <li>
-              <Link to="/reports">Demo</Link>
+            <li onClick={() => this.props.history.push('/reports')}>
+              Demo
             </li>
-            <li>
-              <Link to="/sign-in">Sign In</Link>
+            <li onClick={() => this.props.history.push('/sign-in')}>
+              Sign In
             </li>
           </ul>
         </div>
-  );
+  )
+  }
 }
 
 export default NavbarLanding;

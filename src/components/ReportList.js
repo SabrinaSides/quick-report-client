@@ -3,6 +3,10 @@ import ReportTabs from './ReportTabs';
 import '../styles/ReportList.css';
 
 class ReportList extends Component {
+  static defaultProps = {
+    reports: []
+  }
+
   render() {
     return (
       <div className='report-list'>
