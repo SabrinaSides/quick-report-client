@@ -1,6 +1,5 @@
 import React from 'react';
-//import SignUpForm from '../SignUpForm/SignUpForm'
-import './LandingPage.css'
+import '../styles/LandingPage.css'
 
 function LandingPage() {
   return (
@@ -21,7 +20,6 @@ function LandingPage() {
           <p>Here's another intriguing paragraph</p>
         </div>
       </div>
-      {/* <SignUpForm /> */}
     </div>
   );
 }

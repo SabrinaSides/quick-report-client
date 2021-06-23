@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import ReportContext from './ReportContext';
-import LandingPage from './LandingPage/LandingPage';
-import ReportList from './ReportList/ReportList';
-import AddReport from './AddReport/AddReport';
-import ReportPage from './ReportPage/ReportPage';
-import EditReport from './EditReport/EditReport';
-import NavbarLanding from './Navbar/NavbarLanding';
-import NavbarMain from './Navbar/NavbarMain';
+import LandingPage from './components/LandingPage';
+import ReportList from './components/ReportList';
+import AddReport from './components/AddReport';
+import ReportPage from './components/ReportPage';
+import EditReport from './components/EditReport';
+import NavbarLanding from './components/NavbarLanding';
+import NavbarMain from './components/NavbarMain';
 import './App.css';
-//import reports from './dummy-store';
-import SignInPage from './SignInPage/SignInPage';
+import SignInPage from './components/SignInPage';
 import config from './config';
 
 class App extends Component {

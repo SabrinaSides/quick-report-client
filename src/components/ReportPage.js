@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
 import config from '../config'
-import './ReportPage.css';
-import ReportTabs from '../ReportTabs/ReportTabs'
+import '../styles/ReportPage.css';
+import ReportTabs from './ReportTabs'
 
 class ReportPage extends Component {
   static contextType = ReportContext;

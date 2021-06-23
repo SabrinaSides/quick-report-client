@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import ReportContext from '../ReportContext';
-import './ReportTabs.css'
+import '../styles/ReportTabs.css'
 
 class ReportTabs extends Component {
     static contextType = ReportContext;
