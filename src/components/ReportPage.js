@@ -48,7 +48,7 @@ class ReportPage extends Component {
         <button onClick={() => this.props.history.push(`/edit-report/${chosenReport.pt_id}`)}>Edit</button>
         <button onClick={() => handleDeleteReport(chosenReport.pt_id)}>Delete</button>
         </div>
-        <ul>
+        <ul className='folder-body-content'>
           <li className='report-section-header'>Patient Info:</li>
           <li>Room Number: {chosenReport.room_number}</li>
           <li>Patient Initials: {chosenReport.pt_initials}</li>

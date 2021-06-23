@@ -123,7 +123,7 @@ class AddReport extends Component {
         if (!res.ok) {
           throw new Error('Something went wrong, please try again later.');
         }
-        console.log(res);
+        return res;
       })
       .then(() => {
         this.props.history.goBack();
