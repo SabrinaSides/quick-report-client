@@ -1,7 +1,8 @@
 .folder-report-tab {
-  border: solid;
+  border: solid thin;
+  border-color: #a67563;
   color: black;
-  background-color: beige;
+  background-color: #d9b19a;
   /* for selected tab color see inline style in ReportTabs component*/
   margin-bottom: 0px;
   margin-left: 2%;
@@ -10,7 +11,29 @@
   border-bottom: none;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
-  max-width: 30%;
+  max-width: 40%;
+}
+
+.add-edit-tab {
+  border: solid thin;
+  border-color: rgb(139, 50, 50);
+  color: black;
+  background-color: rgb(206, 73, 73);
+  /* for selected tab color see inline style in ReportTabs component*/
+  margin-bottom: 0px;
+  margin-left: 2%;
+  padding: 5px;
+  text-align: center;
+  border-bottom: none;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  max-width: 40%;
+  height: auto;
+}
+
+.add-edit-tab > h3 {
+  background-color: rgb(206, 73, 73);
+  margin-top: 0px;
 }
 
 .report-tabs {

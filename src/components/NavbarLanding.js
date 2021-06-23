@@ -5,7 +5,7 @@ class NavbarLanding extends Component {
   render(){
   return (
         <div>
-          <ul id="nav-bar">
+          <ul className="nav-bar">
             <li onClick={() => this.props.history.push('/reports')}>
               Demo
             </li>

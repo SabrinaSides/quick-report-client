@@ -9,13 +9,13 @@ class ReportMain extends Component {
 
   render() {
     return (
-      <div className='report-Main'>
+      <div className='report-main'>
         <h2> Report Collection </h2>
         <ReportTabs />
 
-        <div className='folder-body folder-body-report-main'>
-          <h3> Choose a tab to see the full patient report</h3>
-          <p>OR</p>
+        <div className='folder-body main-content'>
+          <h3>Choose a tab to see the full patient report</h3>
+          <p>or</p>
           <button
           className='add-btn'
             onClick={() => this.props.history.push('/add-report')}

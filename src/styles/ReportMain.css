@@ -1,11 +1,13 @@
 .add-btn {
-  max-width: 30%;
+  max-width: 40%;
   margin: 0 auto;
 }
 
-.folder-body-report-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.main-content {
+  align-items: center;
+}
+
+.main-content > h3 {
   text-align: center;
+  text-decoration: none;
 }

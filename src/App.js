@@ -59,7 +59,7 @@ class App extends Component {
           )}
 
           <h1
-            className='header text-link'
+            className='header'
             onClick={() => this.props.history.push('/reports')}
           >
             QuickReport

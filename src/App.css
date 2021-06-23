@@ -1,80 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
 * {
   padding: 0;
   box-sizing: border-box;
+  background-color: #0367a6;
+  color: white;
 }
 
 .App {
   margin-right: 5%;
   margin-left: 5%;
-  font-family: 'Just Another Hand', sans-serif;
+  font-family: 'Open Sans Condensed', sans-serif;
 }
 
 button {
   border: 0;
   border-radius: 0.25rem;
-  background: #1e88e5;
-  color: white;
-  font-family: 'Just Another Hand', sans-serif;
+  background: #63caf2;
+  color: #000000;
+  font-family: 'Open Sans Condensed', sans-serif;
   font-size: 20px;
   line-height: 1.5;
   white-space: nowrap;
   text-decoration: none;
-  padding: 5px;
+  padding: 0 5px;
   margin: 5px;
   cursor: pointer;
+  box-shadow: 2px 2px 1px #666666;
 }
 
 form {
   display: flex;
   flex-direction: column;
+  color: black;
+  background-color: #d9b19a;
+}
+
+form > label {
+  background-color: #d9b19a;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  margin: 5px;
+}
+
+form > input {
+  vertical-align: middle;
+  margin: 5px 10px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  color: black;
+  font-size: 15px;
+}
+
+form > select {
+  vertical-align: middle;
+  margin: 5px 10px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #ddd;
+  color: black;
+  font-size: 15px;
 }
 
 .folder-body {
-  border: solid;
+  border: solid medium;
+  border-color: #a67563;
   color: black;
-  background-color: rgb(240, 219, 193);
+  background-color: #d9b19a;
   margin: 0 auto;
+  margin-bottom: 5%;
   min-height: 250px;
+  border-top-right-radius: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: left;
+  box-shadow: 3px 3px 2px #666666;
 }
 
 .folder-body-content {
   padding-left: 15%;
-  font-size: 25px;
+  font-size: 20px;
+  background-color: #d9b19a;
+}
+
+h1 {
+  color: white;
+  padding-bottom: 2%;
 }
 
 h2 {
   text-align: center;
   font-size: 35px;
   margin-top: 10px;
+  color: white;
 }
 
 h3 {
   font-size: 25px;
   margin-bottom: 0px;
+  background-color: #d9b19a;
+  color: black;
 }
 
 .header {
   text-align: center;
   font-size: 60px;
   margin-bottom: 0;
+  color: white;
+  text-decoration: none;
+  background-color: #0367a6;
+}
+
+li {
+  padding-top: 5px;
+  color: black;
 }
 
 p {
   font-size: 20px;
   color: black;
+  background-color: #d9b19a;
 }
 
 .submit-cancel-btns {
   display: flex;
   flex: row;
   justify-content: space-evenly;
+  background-color: #d9b19a;
 }
 
 .text-link {
   text-decoration: none;
-  color: black;
+  color: #000000;
+  background-color: #d9b19a;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* Medium devices (tablets, 768px and up) */

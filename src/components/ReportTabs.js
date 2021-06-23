@@ -11,27 +11,34 @@ class ReportTabs extends Component {
   };
 
   render() {
-    const { reports} = this.context;
+    const { reports } = this.context;
 
     return (
-        <ul className='report-tabs'>
-          {reports.map((report) => {
-            return (
-              <li
-                key={report.pt_id}
-                className='folder-report-tab'
+      <ul className='report-tabs'>
+        {reports.map((report) => {
+          return (
+            <li
+              key={report.pt_id}
+              className='folder-report-tab'
+              style={{
+                backgroundColor:
+                  report.pt_id === this.props.ptId ? 'rgb(206, 73, 73)' : '',
+              }}
+            >
+              <Link
+                to={`/reports/${report.pt_id}`}
+                className='text-link'
                 style={{
                   backgroundColor:
                     report.pt_id === this.props.ptId ? 'rgb(206, 73, 73)' : '',
                 }}
               >
-                <Link to={`/reports/${report.pt_id}`} className='text-link'>
-                  Room {report.room_number}, {report.pt_initials}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                Room {report.room_number}, {report.pt_initials}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     );
   }
 }
