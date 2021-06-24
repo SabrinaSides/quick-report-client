@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
 function SignInPage() {
-    return (
-        <div>
-            <h2>Sign In Page will be working soon! Check back later!</h2>
-        </div>
-    )
+  return (
+    <div>
+      <h2>Sign In page will be working soon! Check back later!</h2>
+    </div>
+  );
 }
 
-export default SignInPage
+export default SignInPage;

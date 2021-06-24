@@ -3,7 +3,6 @@ import ReportContext from '../ReportContext';
 import config from '../config';
 import '../styles/ReportPage.css';
 import ReportTabs from './ReportTabs';
-
 class ReportPage extends Component {
   static contextType = ReportContext;
 
@@ -95,7 +94,10 @@ class ReportPage extends Component {
       </div>
     ) : (
       <div>
-        <li>Sorry, no report found. Please try again with a different URL</li>
+        <h2>
+          Sorry, no report found. Please try again with a different url or hit
+          Home in the top right corner to see your existing reports.
+        </h2>
       </div>
     );
   }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReportContext from '../ReportContext';
 import config from '../config';
-//import DatePicker from "react-datepicker";
-//import "react-datepicker/dist/react-datepicker.css";
 
 class AddReport extends Component {
   state = {
@@ -49,12 +47,6 @@ class AddReport extends Component {
       [name]: value,
     });
   };
-
-  // handleChangeCalendar = (selected) => {
-  //   this.setState({
-  //     last_bm: selected
-  //   })
-  // }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -332,7 +324,6 @@ class AddReport extends Component {
 
             <h3>GI/GU</h3>
             <label htmlFor='last_bm'>Last BM:</label>
-            {/* <DatePicker selected={this.state.last_bm} onChange={this.handleChangeCalendar} /> */}
             <input
               type='text'
               name='last_bm'

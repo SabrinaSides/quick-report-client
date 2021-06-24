@@ -101,7 +101,7 @@ class EditReport extends Component {
   render() {
     return (
       <div className='full-report-container'>
-        <div className='folder-report-tab add-edit-tab'>
+        <div className='add-edit-tab'>
           <h3>Edit Report:</h3>
         </div>
         <div className='folder-body'>
@@ -293,7 +293,6 @@ class EditReport extends Component {
 
             <h3>GI/GU</h3>
             <label htmlFor='last_bm'>Last BM:</label>
-            {/* <DatePicker selected={this.state.last_bm} onChange={this.handleChangeCalendar} /> */}
             <input
               type='text'
               name='last_bm'
@@ -348,16 +347,16 @@ class EditReport extends Component {
               onChange={this.handleChange}
             />
             <div className='submit-cancel-btns'>
-            <button type='submit' className='submit-btn'>
-              Submit
-            </button>
-            <button
-              onClick={() =>
-                this.props.history.push(`/reports/${this.state.pt_id}`)
-              }
-            >
-              Cancel
-            </button>
+              <button type='submit' className='submit-btn'>
+                Submit
+              </button>
+              <button
+                onClick={() =>
+                  this.props.history.push(`/reports/${this.state.pt_id}`)
+                }
+              >
+                Cancel
+              </button>
             </div>
           </form>
         </div>

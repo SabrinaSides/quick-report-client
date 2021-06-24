@@ -11,6 +11,8 @@ import NavbarMain from './components/NavbarMain';
 import './App.css';
 import SignInPage from './components/SignInPage';
 import config from './config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeartbeat } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   state = {
@@ -51,7 +53,11 @@ class App extends Component {
               <Route key={path} path={path} component={NavbarMain} />
             )
           )}
-          <h1>QuickReport</h1>
+          <h1>
+            {' '}
+            <FontAwesomeIcon icon={faHeartbeat} />
+            QuickReport
+          </h1>
           <main>
             <Switch>
               <Route exact path='/' component={LandingPage} />

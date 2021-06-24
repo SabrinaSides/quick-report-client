@@ -17,7 +17,7 @@ class ReportMain extends Component {
           <h3>Choose a tab to see the full patient report</h3>
           <p>or</p>
           <button
-          className='add-btn'
+            className='add-btn'
             onClick={() => this.props.history.push('/add-report')}
           >
             + Add New Report
