@@ -11,6 +11,7 @@ class ReportMain extends Component {
     return (
       <div className='report-main'>
         <h2> Report Home </h2>
+        <br />
         <ReportTabs />
 
         <div className='folder-body main-content'>
