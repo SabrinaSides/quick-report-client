@@ -30,7 +30,7 @@ The QuickReport client-side allows users to view, create, edit and delete multip
 
 ### Full Report Page
 
-![Full Report Page](src/screenshots/post.png)
+![Full Report Page](src/screenshots/ViewFullReport.png)
 
 ### Add Report Page
 
