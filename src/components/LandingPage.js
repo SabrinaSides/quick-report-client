@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import '../styles/LandingPage.css';
 import NurseTyping from '../images/nurse-typing.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';

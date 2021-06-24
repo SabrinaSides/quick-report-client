@@ -38,7 +38,7 @@
 
 .report-tabs {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap-reverse;
   justify-content: left;
   margin-bottom: 0;
   list-style: none;
@@ -46,6 +46,10 @@
 
 .report-tabs > li {
   font-size: 1.15rem;
+}
+
+.report-tabs:last-of-type {
+  margin-right: 30px;
 }
 
 /* Medium devices (tablets, 768px and up) */
