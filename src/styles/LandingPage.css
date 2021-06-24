@@ -14,8 +14,8 @@
 }
 
 img {
-  max-height: 80%;
-  max-width: 80%;
+  max-width: 50%;
+  padding: 0 1%;
   border-radius: 10px;
 }
 
