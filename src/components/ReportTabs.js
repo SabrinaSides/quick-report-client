@@ -14,6 +14,7 @@ class ReportTabs extends Component {
     const { reports } = this.context;
 
     return (
+      <>
       <ul className='report-tabs'>
         {reports.map((report) => {
           return (
@@ -36,9 +37,11 @@ class ReportTabs extends Component {
                 Room {report.room_number}, {report.pt_initials}
               </Link>
             </li>
-          );
+          )
         })}
+        <div className='folder-layer'/>
       </ul>
+      </>
     );
   }
 }

@@ -86,12 +86,18 @@ form > select {
   justify-content: left;
   text-align: left;
   box-shadow: 3px 3px 2px #666666;
+  z-index: 2;
 }
 
 .folder-body-content {
-  padding-left: 15%;
+  padding-left: 5%;
+  margin: 20px 5%;
+  margin-top: 5px;
   font-size: 20px;
-  background-color: #d9b19a;
+  background-color: white;
+  border: solid thin;
+  border-color: #a67563;
+  border-radius: 8px;
 }
 
 h1 {
@@ -139,7 +145,7 @@ p {
 .text-link {
   text-decoration: none;
   color: #000000;
-  background-color: #d9b19a;
+  background-color: white;
 }
 
 .text-link:hover {

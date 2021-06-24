@@ -14,8 +14,15 @@
 
 .folder-body-content > li {
   padding-top: 5px;
-  background-color: #d9b19a;
+  margin-right: 10%;
+  background-color: white;
   color: black;
+  word-wrap: normal;
+}
+
+.folder-body-content > ul {
+  margin-right: 10%;
+  background-color: white;
 }
 
 .report-section-header {
