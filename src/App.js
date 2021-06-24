@@ -18,12 +18,6 @@ class App extends Component {
     error: null,
   };
 
-  static defaultProps = {
-    history: {
-      push: () => {},
-    },
-  };
-
   componentDidMount() {
     this.handleFetchData();
   }
@@ -57,11 +51,7 @@ class App extends Component {
               <Route key={path} path={path} component={NavbarMain} />
             )
           )}
-
-          <h1 className='header'
-            onClick={() => this.props.history.push('/reports')}>
-            QuickReport
-          </h1>
+          <h1>QuickReport</h1>
           <main>
             <Switch>
               <Route exact path='/' component={LandingPage} />

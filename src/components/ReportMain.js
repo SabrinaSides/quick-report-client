@@ -10,7 +10,7 @@ class ReportMain extends Component {
   render() {
     return (
       <div className='report-main'>
-        <h2> Report Collection </h2>
+        <h2> Report Home </h2>
         <ReportTabs />
 
         <div className='folder-body main-content'>

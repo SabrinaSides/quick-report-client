@@ -6,7 +6,8 @@ class NavbarMain extends Component {
     return (
       <div>
         <ul className='nav-bar'>
-          <li onClick={() => this.props.history.push('/')}>Sign Out</li>
+          <li onClick={() => this.props.history.push('/')} className='text-link'>Sign Out</li>
+          <li onClick= {() => this.props.history.push('/reports')} className='text-link'>Home |</li>
         </ul>
       </div>
     );

@@ -2,4 +2,20 @@
   display: flex;
   flex-flow: column wrap;
   text-align: center;
+  align-items: center;
+}
+.feature > h3 {
+  background-color: #0367a6;
+  color: white;
+}
+
+.feature > p {
+  background-color: #0367a6;
+  color: white;
+}
+
+img {
+  max-height: 55%;
+  max-width: 55%;
+  border-radius: 10px;
 }

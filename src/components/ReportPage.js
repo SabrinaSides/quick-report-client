@@ -38,7 +38,7 @@ class ReportPage extends Component {
       <div className='full-report-container'>
         <div className='back-btn'>
           <button onClick={() => this.props.history.push('/reports')}>
-            Back
+            Home
           </button>
         </div>
         <ReportTabs ptId={chosenReport.pt_id} />
