@@ -39,3 +39,11 @@ The QuickReport client-side allows users to view, create, edit and delete multip
 ### Edit Report Page
 
 ![Edit Report Page](src/screenshots/EditReport.png)
+
+## Wireframes
+
+![Home Page](src/screenshots/WireframeHomePage.png)
+
+![Add Report Page](src/screenshots/WireframeNewReport.png)
+
+![Full Report Page](src/screenshots/WireframeReportPage.png)
